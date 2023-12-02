@@ -14,9 +14,9 @@ main()
 {
 	int d = 9, k, n, a[3][3], d2, d1 = d, count, row;								// d = la so o co the nhap giu lieu	
 	char c, name1[50], name2[50];											// d1 = xac dinh so o nhap tu PLAYER 1
-	interface(a);														// d2 = xac dinh so o nhap tu PLAYER 2
-	printf("\n\n\nEnter Player 1: ");									// d1 va d2 se tra ve gia tri cho d
-	scanf("%s", name1);													// truong hop d=0 ma chua co WINNER thi = DRAW
+	interface(a);													// d2 = xac dinh so o nhap tu PLAYER 2
+	printf("\n\n\nEnter Player 1: ");										// d1 va d2 se tra ve gia tri cho d
+	scanf("%s", name1);												// truong hop d=0 ma chua co WINNER thi = DRAW
 	printf("\n\nEnter Player 2: ");
 	scanf("%s", name2);
 	system("cls");
@@ -24,7 +24,7 @@ main()
 	{
 		do
 		{
-			do															// nhan gia tri 1 tu ban phim
+			do												// nhan gia tri 1 tu ban phim
 			{
 			system("cls");
 			refill(a, row);
@@ -45,14 +45,14 @@ main()
 				row = n;
 			}
 			
-			if (a[(row - 1) / 3][(row - 1) % 3] == 0)									// (n - 1) / 3  = vi tri dong
-			{															// (n - 1) % 3  = vi tri cot
-				system("cls");											// n la vi tri nhap tu ban phim
+			if (a[(row - 1) / 3][(row - 1) % 3] == 0)							// (n - 1) / 3  = vi tri dong
+			{												// (n - 1) % 3  = vi tri cot
+				system("cls");										// n la vi tri nhap tu ban phim
 				input1(a, row);
 				d1--;
 			} else
-				{														// nhap sai
-					system("cls");										// --> xoa man hinh va dien lai giao dien goc
+				{											// nhap sai
+					system("cls");									// --> xoa man hinh va dien lai giao dien goc
 					refill(a, row);
 				}	
 		} while (d1 == d);
@@ -63,7 +63,7 @@ main()
 		
 		do
 		{
-			do															// nhan gia tri 2 tu ban phim			
+			do												// nhan gia tri 2 tu ban phim			
 			{
 			system("cls");
 			refill(a, n);
@@ -104,7 +104,7 @@ main()
 }
 
 
-void interface(int a[3][3])							// giao dien ban dau 
+void interface(int a[3][3])												// giao dien ban dau 
 {
 	for(int i = 0; i <= 2; i++)
 	{
@@ -119,7 +119,7 @@ void interface(int a[3][3])							// giao dien ban dau
 }
 
 
-void input1(int a[3][3], int n)						// dien gia tri 1 vao vi tri minh chon
+void input1(int a[3][3], int n)												// dien gia tri 1 vao vi tri minh chon
 {
 	a[(n - 1) / 3][(n - 1) % 3]=1;
 	for(int i = 0;i <= 2; i++)
@@ -133,7 +133,7 @@ void input1(int a[3][3], int n)						// dien gia tri 1 vao vi tri minh chon
 }
 
 
-void input2(int a[3][3], int n)						// dien gia tri 2 vao vi tri minh chon
+void input2(int a[3][3], int n)												// dien gia tri 2 vao vi tri minh chon
 {
 	a[(n - 1) / 3][(n - 1) % 3]=2;
 	for(int i = 0;i <= 2; i++)
@@ -146,9 +146,9 @@ void input2(int a[3][3], int n)						// dien gia tri 2 vao vi tri minh chon
 }
 
 
-void refill(int a[3][3], int n)						// dien lai cac o khi minh chon vi tri
-{													// su dung trong viec minh nhap sai format
-	for(int i = 0; i <= 2; i++)							// hoac nhap vao vi tri da bi danh dau
+void refill(int a[3][3], int n)												// dien lai cac o khi minh chon vi tri
+{															// su dung trong viec minh nhap sai format
+	for(int i = 0; i <= 2; i++)											// hoac nhap vao vi tri da bi danh dau
 	{
 		printf("\n\n\n\t\t");
 		for(int j = 0; j <= 2; j++)
@@ -158,38 +158,39 @@ void refill(int a[3][3], int n)						// dien lai cac o khi minh chon vi tri
 }
 
 
-int check(int a[3][3], int d, char name1[50], char name2[50]) 			// kiem tra va xuat ra ket qua = WINNER//      
+int check(int a[3][3], int d, char name1[50], char name2[50]) 								// kiem tra va xuat ra ket qua = WINNER//      
 { 
 	int k = 0;
-	for (int j = 0; j <= 2; j++)														// kiem tra cac cot
+	for (int j = 0; j <= 2; j++)											// kiem tra cac cot
 		if (a[0][j] != 0)
 			if(a[0][j] == a[1][j] && a[0][j] == a[2][j]) k = a[0][j];					
 			
-	for (int i = 0; i<=2; i++)														// kiem tra cac hang
+	for (int i = 0; i<=2; i++)											// kiem tra cac hang
 		if(a[i][0] == a[i][1] && a[i][0] == a[i][2] && a[i][0] != 0) k = a[i][0];
 		
-	if ((a[0][0] == a[1][1] && a[0][0] == a[2][2] && a[0][0] != 0)) k = a[1][1];		// kiem tra duong cheo 
+	if ((a[0][0] == a[1][1] && a[0][0] == a[2][2] && a[0][0] != 0)) k = a[1][1];					// kiem tra duong cheo 
 	if ((a[0][2] == a[1][1] && a[0][2] == a[2][0] && a[0][2] != 0)) k = a[0][2];
 	
 	
 	
 	
 	
-	if (k == 1) 																	// k = 1 tuong ung voi PLAYER 1
+	if (k == 1) 													// k = 1 tuong ung voi PLAYER 1
 	{
 		printf("\n\n\n\n\n\n\t%s is WINNER !!\n\n\n\n\n\n",name1);
 		exit(0);
 	}
 	
-	if (k == 2) 																	// k = 2 tuong ung voi PLAYER 2
+	if (k == 2) 													// k = 2 tuong ung voi PLAYER 2
 	{
 		printf("\n\n\n\n\n\n\t%s is WINNER !!\n\n\n\n\n\n",name2);
 		exit(0);
 	}
 	
-	if (k == 0 && d == 0) 															// k = 0 tuong ung voi DRAW
+	if (k == 0 && d == 0) 												// k = 0 tuong ung voi DRAW
 	{
 		printf("\n\n\n\n\n\n\tDRAWWWW !!!\n\n\n\n\n\n");
 		exit(0);
 	}
 }
+
