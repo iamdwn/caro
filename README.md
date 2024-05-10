@@ -1,6 +1,6 @@
 ﻿# Caro 3x3 in Command Prompt
 
-Welcome to the Bacxiucafe game implemented using Spring Boot! This project is a web-based implementation of the popular Chinese dice game Sic-Bo. In this game, players roll three dice and bet on various outcomes.
+Welcome to caro ver 3x3.
 
 ## Features
 
