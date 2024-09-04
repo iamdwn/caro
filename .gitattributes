@@ -1,0 +1,3 @@
+# Apply C language rules to C source and header files
+*.c     linguist-language=C
+*.h     linguist-language=C
